@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+
+    background-color:  #354D6A;
+    color: #EDDDE0;
+    align-items: center;
+} 
+
+.Login{
+
+    background-color: #EDDDE0;
+    color: #354D6A;
+    border-radius: 8px;
+    width: 450px;
+    margin: auto;
+    margin-top: 10%;
+    padding: 10px;
+    text-align: center;
+}
+
+.Login h1{
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+.Logindata{
+
+    height: 100%;
+    width: 100%;
+    font-size: 1.3rem;
+    text-align: center;
+ 
+}
+.Logindata .span{
+
+   background-color:#354D6A;
+   color: #EDDDE0;
+   margin: 20px;
+   margin-bottom: 30px;
+   display: flex;
+   align-items: center;
+   border-radius: 8px;
+   height: 40px;
+   padding: 10px;
+   
+}
+.span i{
+
+    margin-right: 10px;
+}
+#eye:hover{
+
+    cursor: pointer;
+}
+
+.span input{
+
+        height:100% ;
+        border: none;
+        outline: none;
+        width: 100%;
+        background-color: transparent;
+        font-size: 0.8em;
+        color: #EDDDE0;
+        
+
+}
+button{
+
+    height: 40px;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #354D6A;
+    color: #EDDDE0;
+    font-weight: 700;
+    font-size: 0.9em;
+    border-radius: 8px;
+}
+button:hover{
+
+    cursor: pointer;
+    opacity: 0.6;
+}
+span{
+
+    color: red;
+}

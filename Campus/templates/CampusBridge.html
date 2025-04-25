@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CampusBridge</title>
+        <link rel="icon" href="static/img/Logo.png">
+        <link rel="stylesheet" href="static/css/CampusBrige.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            @keyframes change{
+
+            20%{
+                    background-image: url("static/img/slide2.jpg");
+            }
+            70%{
+                    background-image: url("static/img/slide3.jpg");
+            }
+            100%{
+                    background-image: url("static/img/slide4.avif");
+                }
+            }
+        </style>
+    </head>
+        <body>
+            <header>
+                <div class="nav">
+                    <div class="logo">
+                        <img src="static/img/Logo.png">
+                    </div>
+                    <div class="navData">
+                        <ul>
+                            <a href=""><li>Home</li></a> 
+                            <a href="#features"><li>Features</li></a>
+                            <a onclick="aboutusclick();"><li>About Us</li></a>
+                            <a href="#Contact"><li>Contact</li></a>
+                           <a href="/loginpage"> <li id="Loginbtn">Login/Sign up</li></a>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </header>
+            
+            <div class="cointener" style="background-image: url('static/img/slides.webp');">
+                <div class="heading">
+                    <h1>Welcome To CampusBridge</h1>
+                </div>
+            </div>
+            <main id="main">
+                <div class="cards" id="features">
+                    <div class="card">
+                        <div class="icon">
+                            <i class="fa-solid fa-building-columns"></i>
+                            <h2>Student Managment</h2>
+                            <br>
+                            <p>Easily manage student data and academic progress</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="icon">
+                            <i class="fa-solid fa-user-check"></i>
+                            <h2>Student Managment</h2><br>
+                            <p>Easily manage student data and academic progress</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="icon">
+                            <i class="fa-solid fa-book"></i>
+                            <h2>Student Managment</h2>
+                            <br>
+                            <p>Easily manage student data and academic progress</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="icon">
+                            <i class="fa-solid fa-file-lines"></i>
+                            <h2>Student Managment</h2>
+                            <br>
+                            <p>Easily manage student data and academic progress</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="icon">
+                            <i class="fa-solid fa-calendar-days"></i>   
+                            <h2>Student Managment</h2>
+                            <br>
+                            <p>Easily manage student data and academic progress</p>
+                        </div>
+                        
+                    </div>
+                    <div class="card">
+                        <div class="icon">
+                            <i class="fa-solid fa-calendar-days"></i>   
+                            <h2>Student Managment</h2>
+                            <br>
+                            <p>Easily manage student data and academic progress</p>
+                        </div>
+                        
+                    </div>
+                    <div class="card">
+                        <div class="icon">
+                            <i class="fa-solid fa-calendar-days"></i>   
+                            <h2>Student Managment</h2>
+                            <br>
+                            <p>Easily manage student data and academic progress</p>
+                        </div>
+                        
+                    </div>
+                    <div class="card">
+                        <div class="icon">
+                            <i class="fa-solid fa-calendar-days"></i>   
+                            <h2>Student Managment</h2>
+                            <br>
+                            <p>Easily manage student data and academic progress</p>
+                        </div>
+                        
+                    </div>
+                    <div class="card">
+                        <div class="icon">
+                            <i class="fa-solid fa-calendar-days"></i>   
+                            <h2>Student Managment</h2>
+                            <br>
+                            <p>Easily manage student data and academic progress</p>
+                        </div>
+                        
+                    </div>
+                    <div class="card">
+                        <div class="icon">
+                            <i class="fa-solid fa-calendar-days"></i>   
+                            <h2>Student Managment</h2>
+                            <br>
+                            <p>Easily manage student data and academic progress</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </main>
+            <div class="contact" id="Contact">
+                <h1>Contact US</h1>
+                <form>
+                    <div class="first">
+                        <span>
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" placeholder="First Name" name="firstname" required>
+                        </span>
+                        <span>
+                            <i class="fa-regular fa-user"></i>
+                            <input type="text" placeholder="Last Name" name="lastname" required>
+                        </span>
+                    </div>
+                    <div class="second">
+                        <span>
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="tel" placeholder="Phone Number" name="phone" maxlength="10" minlength="10" required>
+                        </span>
+                        <span>
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" placeholder="Email Id" name="email" required>
+                        </span>
+                    </div>
+                    <div class="third">
+                        <textarea name="message" placeholder="Message" minlength="200" required></textarea>
+                    </div>
+                    <div class="fourth"><button value="submit">Submit</button></div>
+                </form>
+            </div>
+            <div class="aboutus" id="Aboutus">
+                <i class="fa-solid fa-rectangle-xmark" id="close" onclick="closeclick()"></i>
+                <h1>About Us</h1>
+                <p>Welcome to ClassBridge, an innovative platform that is transforming the way educational institutions manage classrooms and academic data. Our mission is to simplify educational workflows for colleges, faculty, and students by providing an integrated solution that handles attendance, results, and other academic data seamlessly.<br>
+                    <br>
+
+                    ClassBridge is designed to bridge the gap between technology and education, creating an efficient, connected, and collaborative environment. We understand that managing a classroom can be challenging, which is why our platform offers a unified approach to handle essential academic tasks.
+                    <br><br><br>
+                    
+                   <b>For Colleges:</b> ClassBridge empowers institutions to manage operations effectively, offering features like student and faculty registration, course scheduling, and streamlined data storage. Colleges can track performance metrics, ensure compliance, and foster communication between departments.
+                    <br><br><br>
+                    
+                    <b>For Faculty: </b> We provide powerful tools that make administrative tasks like attendance tracking, result uploads, and assignment management simple and efficient. Faculty members can also monitor student progress, interact with students easily, and reduce paperwork, freeing up more time for teaching.
+                    <br><br><br>
+                    
+                    <b>For Students: </b>ClassBridge allows students to stay informed about their academic journey. With secure logins, students can check personal data, view attendance records, access results, and receive important announcements. The platform promotes transparency and communication, ensuring students are always up to date.
+                    <br><br><br>
+                    
+                   <b> At ClassBridge, we are committed to creating smarter, connected classrooms. We believe that by simplifying administrative processes, we enable educators and institutions to focus on what matters most—learning and student success. Join us as we pave the way for the future of education, where technology enhances the classroom experience for all.</p>
+            </div>
+            <footer>
+                <div class="data">
+                    <p> &copy 2025 CampusBridge. All rights reseved</p>
+                </div>
+            </footer>
+            <script src="static/js/CampusBrige.js"></script>
+        </body>
+    
+</html>

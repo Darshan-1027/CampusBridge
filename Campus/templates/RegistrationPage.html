@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <title>Registration Page</title>
+        <link rel="stylesheet" href="{% static 'css/Registration.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        
+        <div class="RegistrationSelect">
+            <div class="logo"><img src="static/img/Logo.png" width="20%" alt="Logo"></div>
+            <select name="Opctionselect">
+                <option value="college">College</option>
+                <option value="faculty">Faculty</option>
+                <option value="student">Student</option>
+            </select>
+        </div>
+        {% if messages %}
+        {% for i in messages %}
+        <div id="Message" style="background-color: #D4EDDA; color: red; padding: 10px; border-radius: 5px; margin: 10px 0; text-align: center;">
+            {{ i }}
+          </div>
+        {% endfor %}
+        {% endif %}
+
+        <div class="main">
+            <h1>Registration</h1>
+            <div class="RegistrarionCollege" id="college">
+                <form method="post" action="/collegedatastore">
+                 {% csrf_token %}   
+               <div class="data"><input type="name" name="college_name" placeholder="College Full Name" required></div>
+                <div class="data" id="address"><input type="text" name="country" placeholder="Country" list="countrys" required><datalist id="countrys"><option>India</option></datalist>
+                <input type="text" name="state" placeholder="State" list="states" required><datalist id="states"><option>Gujarat</option></datalist>
+                <input type="text" name="city" placeholder="City"required></div>
+            
+                <div class="data"><input type="tel" name="phone_no" placeholder="Contact No" minlength="10" maxlength="10" required>
+                <input type="email" name="emailid" placeholder="Official Email" required></div>
+
+                <div class="data"><input type="text" name="admin_name" placeholder="Administration Full Name" required>
+                <input type="tel" placeholder="Contac No" name="admin_contact_no" maxlength="10" minlength="10" required></div>
+                <div class="data"><input type="password" name="password" placeholder="Create Strong Password" minlength="8" required></div>
+                <div class="data" id="btn">
+                    <button value="Submit">Submit</button>
+                </div>
+            </form>
+            </div>
+
+
+            <div class="RegistrarionFaculty" id="faculty">
+                <form method="post" action="/facultydatastore" enctype="multipart/form-data">
+                {% csrf_token %}    
+                    <div class="data">
+                        <input type="name" name="faculty_name" placeholder="Faculty Full Name" required>
+                    </div>
+                    <div class="data" id="radiobtn">
+                       <div class="male"> Male<input type="radio" name="gender" value="Male" required></div>
+                       <div class="female">Female<input type="radio" name="gender" value="Female" required></div><input type="date" name="date" id="date"  required>
+                    </div>
+                    <div class="data" id="address">
+                        <input type="tel" name="faculty_number" placeholder="Phone No" maxlength="10" minlength="10" required>
+                        <input type="email" name="faculty_emailid" placeholder="Email Id" required>
+                    </div>
+                    <div class="data">
+                        <textarea name="address" name="address" placeholder="Address" maxlength="200"></textarea>
+                    </div>
+                    <div class="data">
+                        <select  name="colleges" required style="width: 100%; background-color: #ffff; color: #354D6A;">
+                            <option selected disabled>----------------------Select College----------------------</option>
+                            
+                            {% for i in colleges %}
+                            {% if i.Approval %}
+                            <option value="{{ i.id }}">{{ i.Clg_name }}</option>
+                            {% endif %}
+                            {% endfor %}
+
+                        </select>
+                    </div>
+                    <div class="data" id="address">
+                        <input type="text" name="faculty_entroll_no" placeholder="Entrollment Number" required>
+                        <input type="text" name="departments" placeholder="Department" required>
+
+                    </div>
+                    <div class="data">
+                        <div class="file">Upload Document<input type="file" name="document" accept=".jpg,.jpeg,.png" required></div>
+                        <span style="color: red;">Note :- Only Photo Allowd .jpg Or .png</span>
+                    </div>
+                    <div class="data"><input type="password" name="password" placeholder="Create Strong Password" minlength="8" required></div>
+                    <div class="data" id="btn">
+                        <button value="Submit">Submit</button>
+                    </div>
+                    
+              
+                </form>
+            </div>
+
+
+            <div class="RegistrationStudent" id="student">
+                <form method="post" action="/studentdatastore">
+                {% csrf_token %}
+                    <div class="data">
+                        <input type="text" name="student_name" placeholder="Full Student Name" required>
+                    </div>
+                    <div class="data" id="radiobtn">
+                        <div class="male"> Male<input type="radio" name="gender" value="Male" required></div>
+                        <div class="female">Female<input type="radio" name="gender" value="Female" required></div><input type="date" name="date" id="date" max="2020-12-31" placeholder="Birth Date" required>
+                     </div>
+                     <div class="data" id="address">
+                        <input type="tel" name="call_no" placeholder="Phone No" maxlength="10" minlength="10" required>
+                        <input type="email" name="email" placeholder="Email Id" required>
+                    </div>
+                    <div class="data">
+                        <textarea name="address" name="address" placeholder="Address" maxlength="200" required></textarea>
+                    </div>
+                    <div class="data" id="address">
+                        <input type="text" name="numberentrollment" placeholder="Entrollment Number" required>
+                        <select  name="courses" style="background-color: #ffff; color:#354D6A; height: 50px;" required>
+                            <option selected disabled>Select Department</option>
+                            <option>BCA</option>
+                        </select>
+
+                    </div>
+                    <div class="data">
+                        <select name="semester" style="background-color: #ffff; color:#354D6A; height: 50px; width: 100%;" required>
+                            <option selected disabled>Select Semester</option>
+                            <option>Semester-1</option>
+                            <option>Semester-2</option>
+                            <option>Semester-3</option>
+                            <option>Semester-4</option>
+                            <option>Semester-5</option>
+                            <option>Semester-6</option>
+                        </select>
+                    </div>
+                    <div class="data">
+                        <select  name="colleges" required style="width: 100%; background-color: #ffff; color: #354D6A;">
+                            <option selected disabled>----------------------Select College----------------------</option>
+                            
+                            {% for i in colleges %}
+                            {% if i.Approval %}
+                            <option value="{{ i.id }}">{{ i.Clg_name }}</option>
+                            {% endif %}
+                            {% endfor %}
+
+                        </select>
+                    </div>
+                    <div class="data"><input type="password" name="password" placeholder="Create Strong Password" minlength="8" required></div>
+                    <div class="data" id="btn">
+                        <button value="Submit">Submit</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+        <script src="{% static 'js/Registration.js' %}"></script>
+    </body>
+</html>

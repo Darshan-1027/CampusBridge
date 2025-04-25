@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+
+    background-color: #354D6A;
+    color: #EDDDE0;
+}
+.RegistrationSelect{
+
+    background-color: #EDDDE0;
+    color:#354D6A ;
+    text-align: center;
+}
+select{
+
+    height: 35px;
+    width: 60%;
+    text-align: center;
+    font-size: 1rem;
+    margin: 10px;
+    background-color: #354D6A;
+    color: #EDDDE0;
+    border-radius: 8px;
+}
+option{
+
+    background-color: #EDDDE0;
+    color: #354D6A;   
+}
+.main{ 
+    
+    padding: 20px;
+}
+.main h1{
+
+    font-size: 2.3rem;
+    text-align: center;
+}
+.RegistrarionCollege,.RegistrarionFaculty,.RegistrationStudent{
+
+    background-color: #EDDDE0;
+    color: #354D6A;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 10px;
+
+
+}
+
+
+.RegistrarionCollege .data{
+    margin: 10px;
+    width: 100%;
+}
+.data{
+
+    justify-content: space-evenly;
+}
+.data input{
+
+    height: 30px;
+    width: 97%;
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+}
+#address{
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+}
+#btn{
+
+    text-align: center;
+    margin-top: 20px;
+    
+    
+}
+#btn button{
+
+    height: 40px;
+    width: 80%;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #354D6A;
+    color: #EDDDE0;
+}
+#radiobtn{
+
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+#radiobtn input{
+
+        width: 20px;
+    
+}
+
+ .male,.female{
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    background-color: white;
+    padding: 5px;
+    width: 120px;
+    border-radius: 8px;
+    margin: 5px;
+    justify-content: center;
+   
+ }
+ .data #date{
+
+    width:30%;
+}
+textarea{
+
+    width: 97%;
+    font-size: 1rem;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    max-width: 97%;
+    height: 120px;
+}
+.file{
+
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+button:hover{
+
+    cursor: pointer;
+    opacity: 0.5;
+}
+@media only screen and (max-width:1200px){
+
+    .data input{
+
+        width: 90%;
+    }
+}

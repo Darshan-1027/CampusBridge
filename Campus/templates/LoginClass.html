@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <title>LoginPage</title>
+        <link rel="stylesheet" href="{% static 'css/LoginClass.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        {% if messages %}
+        {% for i in messages %}
+        {% if i.tags == "success" %}
+            <div id="Message" style="background-color: #D4EDDA; color: #155724; padding: 10px; border-radius: 5px; margin: 10px 0; text-align: center;">
+                {{ i }}
+            </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+
+        <main>
+            <div class="Login">
+                <img src="static/img/Logo.png" width="33%">
+                <h1>Log In</h1>
+                <div class="Logindata">
+                    <form method="post" action="/logincheck">
+                        {% csrf_token %}
+                        {% if messages %}
+                        {% for i in messages %}
+                        {% if i.tags == "error" %}
+                            <span style="color:red">{{ i }}</span>
+                        {% endif %}
+                        {% endfor %}
+                        {% endif %}
+
+                    <div class="span"><i class="fa-solid fa-user"></i><input type="email" name="emailid" placeholder="Email Id" name="loginEmail" required></div>
+                    <div class="span"><i class="fa-solid fa-lock"></i><input type="password" name="password" placeholder="Password" name="loginpassword" id="password" minlength="8" required><i class="fa-solid fa-eye-slash" id="eye" onclick="eyeclick();"></i></div>
+                    <a href="#">Forget Password</a> | <a href="/registrationpage">Create New Account</a><br>
+                    <button value="submit">Submit</button>
+                </form>
+                </div>
+            </div>
+        </main>
+        <script src="{% static 'js/LoginClass.js' %}"></script>
+    </body>
+</html>
